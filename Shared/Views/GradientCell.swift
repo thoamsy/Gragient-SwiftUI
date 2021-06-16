@@ -10,6 +10,56 @@ import SwiftUI
 struct GradientCell: View {
   let startColor: Color
   let endColor: Color
+  var radius: CGFloat = 50
+
+  var body: some View {
+
+    VStack {
+      HStack{
+        Text("Color Name")
+          .font(.body)
+        Spacer()
+      }
+      GradientCircle(
+        startColor: startColor,
+        endColor: endColor,
+        radius: radius
+      )
+      HStack {
+        HStack {
+          Text(startColor.description)
+          Image(systemName: "arrow.right")
+          Text(endColor.description)
+        }
+          .font(.system(.footnote, design: .rounded))
+        Spacer()
+        Button(action: {
+          UIPasteboard.general.string = "linear-gradient(45deg, \(startColor.description), \(endColor.description))"
+        }) {
+          Label("Copy CSS", systemImage: "doc.on.doc")
+            .labelStyle(.iconOnly)
+            .foregroundColor(Color(UIColor.label))
+        }
+      }
+    }
+    .padding(16)
+    .frame(width: 320, height: 320)
+    .background(Color(UIColor.secondarySystemGroupedBackground))
+    .cornerRadius(16)
+    .shadow(
+      color: Color(red: 36/255, green: 37/255, blue: 38/255, opacity: 0.13),
+      radius: CGFloat(20.0),
+      x: CGFloat(5.0),
+      y: CGFloat(12.0)
+    )
+  }
+}
+
+struct GradientCircle: View {
+  let startColor: Color
+  let endColor: Color
+  let radius: CGFloat
+
   var body: some View {
     Circle()
       .fill(
@@ -19,6 +69,7 @@ struct GradientCell: View {
           endPoint: .bottom
         )
       )
+      .frame(width: radius * 2, height: radius * 2)
   }
 }
 
@@ -30,19 +81,13 @@ extension GradientCell {
 
 struct GradientCell_Previews: PreviewProvider {
   static var previews: some View {
-    HStack {
-      GradientCell(
-        startColor: Color.rgb(0xff9a93),
-        endColor: Color.rgb(0xfad0c4)
-      )
-        .radius(with: 50)
-
-      GradientCell(
-        startColor: Color.rgb(0xa18cd1),
-        endColor: Color.rgb(0xfbc2eb)
-      )
-        .radius(with: 50)
-    }
+    GradientCell(
+      startColor: Color.rgb(0xff9a93),
+      endColor: Color.rgb(0xfad0c4),
+      radius: 100
+    )
+      .preferredColorScheme(.dark)
+      .frame(width: 200)
   }
 }
 
