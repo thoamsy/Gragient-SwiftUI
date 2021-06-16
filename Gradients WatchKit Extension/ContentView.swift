@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Shared
+//  Gradients WatchKit Extension
 //
 //  Created by yk on 2021/6/17.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        Text("Hello, World!")
             .padding()
     }
 }

@@ -8,33 +8,35 @@
 import SwiftUI
 
 struct GradientCell: View {
-  let startColor: Color
-  let endColor: Color
-  var radius: CGFloat = 50
+  let group: (startColor: Color, endColor: Color)
+  var colorName = "Default Name"
+  var radius: CGFloat = 100
 
   var body: some View {
 
     VStack {
-      HStack{
-        Text("Color Name")
-          .font(.body)
+      HStack {
+        Text(colorName)
+          .font(.system(size: 15))
         Spacer()
       }
+      Spacer()
       GradientCircle(
-        startColor: startColor,
-        endColor: endColor,
+        startColor: group.startColor,
+        endColor: group.endColor,
         radius: radius
       )
+      Spacer()
       HStack {
         HStack {
-          Text(startColor.description)
+          Text(group.startColor.description)
           Image(systemName: "arrow.right")
-          Text(endColor.description)
+          Text(group.endColor.description)
         }
-          .font(.system(.footnote, design: .rounded))
+        .font(.system(.footnote, design: .rounded))
         Spacer()
         Button(action: {
-          UIPasteboard.general.string = "linear-gradient(45deg, \(startColor.description), \(endColor.description))"
+          UIPasteboard.general.string = "linear-gradient(45deg, \(group.startColor.description), \(group.endColor.description))"
         }) {
           Label("Copy CSS", systemImage: "doc.on.doc")
             .labelStyle(.iconOnly)
@@ -82,9 +84,10 @@ extension GradientCell {
 struct GradientCell_Previews: PreviewProvider {
   static var previews: some View {
     GradientCell(
-      startColor: Color.rgb(0xff9a93),
-      endColor: Color.rgb(0xfad0c4),
-      radius: 100
+      group: (
+        Color.rgb(0xff9a93),
+        Color.rgb(0xfad0c4)
+      )
     )
       .preferredColorScheme(.dark)
       .frame(width: 200)
