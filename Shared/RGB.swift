@@ -25,4 +25,9 @@ extension Color {
     return Self.init(red: Double(red) / 255, green: Double(green) / 255, blue: Double(blue) / 255, opacity: Double(alpha) / 255)
   }
 
+
+  var rgbDescription: String {
+    let to = description.index(description.endIndex, offsetBy: -2)
+    return String(description.prefix(upTo: to))
+  }
 }

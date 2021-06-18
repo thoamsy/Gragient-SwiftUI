@@ -12,13 +12,6 @@ struct GradientCell: View {
   var colorName = "Default Name"
   var radius: CGFloat = 100
 
-
-  func colorRGB(of color: Color) -> String {
-    let result = color.description
-    let to = result.index(result.endIndex, offsetBy: -2)
-    return String(result.prefix(upTo: to))
-  }
-
   var body: some View {
     VStack(spacing: 4) {
       HStack {
@@ -34,9 +27,9 @@ struct GradientCell: View {
       Spacer()
       HStack {
         HStack {
-          Text(colorRGB(of: group.startColor))
+          Text(group.startColor.rgbDescription)
           Image(systemName: "arrow.right")
-          Text(colorRGB(of: group.endColor))
+          Text(group.endColor.rgbDescription)
         }
 #if os(iOS)
         .font(
@@ -58,8 +51,11 @@ struct GradientCell: View {
         }
 #endif
       }
+      .padding()
+      .background(.ultraThinMaterial)
     }
-    .padding()
+    .padding([.top])
+    .foregroundColor(.primary)
 #if os(iOS)
     .background(Color(UIColor.secondarySystemGroupedBackground))
 #endif

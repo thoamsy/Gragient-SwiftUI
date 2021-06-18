@@ -20,6 +20,18 @@ struct GradientData: Codable, Identifiable {
   struct Gradient: Codable {
     let color: String
     let pos: Int8
+
+//    var yes: Color {
+//      colorString(of: color)
+//    }
+
+    func colorString(of color: String) -> Color {
+      let index = color.index(after: color.startIndex)
+      if let result = Int32(color.suffix(from: index), radix: 16) {
+        return Color.rgb(result)
+      }
+      return Color.black
+    }
   }
 }
 
