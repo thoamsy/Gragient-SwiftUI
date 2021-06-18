@@ -52,7 +52,9 @@ struct GradientCell: View {
 #endif
       }
       .padding()
-      .background(.ultraThinMaterial)
+#if os(iOS)
+      .background(.regularMaterial)
+#endif
     }
     .padding([.top])
     .foregroundColor(.primary)

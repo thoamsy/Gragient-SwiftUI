@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GradientGrid: View {
   @StateObject private var colors = Gradients()
+  @Environment(\.isSearching) var isSearching
   @State private var keyword = ""
 
   var radius: CGFloat = 100
@@ -24,11 +25,11 @@ struct GradientGrid: View {
   }
 
   var searched: [GradientData] {
-    colors.items.filter { $0.name.contains(keyword)}
+    keyword.isEmpty ? colors.items : colors.items.filter { $0.name.contains(keyword)}
   }
 
   var colorList: some View {
-    ForEach(colors.items) { color in
+    ForEach(searched) { color in
       let startColor = colorString(of: color.gradient[0].color)
       let endColor = colorString(of: color.gradient[1].color)
       NavigationLink {
@@ -70,8 +71,8 @@ struct GradientGrid: View {
     .task {
       await colors.updateGradients()
     }
-    .searchable(text: $keyword) {
-      ForEach(searched) { color in
+    .searchable("Searching Colors", text: $keyword) {
+      ForEach(searched.prefix(10)) { color in
         let startColor = colorString(of: color.gradient[0].color)
         let endColor = colorString(of: color.gradient[1].color)
         Label {
@@ -84,7 +85,6 @@ struct GradientGrid: View {
             )
             .frame(width: 44, height: 44, alignment: .center)
         }.searchCompletion(color.name)
-          .foregroundColor(.secondary)
       }
     }
   }
