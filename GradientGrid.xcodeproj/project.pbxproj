@@ -83,6 +83,7 @@
 
 /* Begin PBXFileReference section */
 		59E3BB1B267C79BF000B7477 /* PureColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PureColor.swift; sourceTree = "<group>"; };
+		59E3BB1F267C8CD6000B7477 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		59EEEA7F267A5825009FE798 /* GradientGridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientGridApp.swift; sourceTree = "<group>"; };
 		59EEEA81267A5826009FE798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59EEEA86267A5826009FE798 /* GradientGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradientGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +135,7 @@
 		59EEEA79267A5824009FE798 = {
 			isa = PBXGroup;
 			children = (
+				59E3BB1F267C8CD6000B7477 /* README.md */,
 				59EEEA7E267A5825009FE798 /* Shared */,
 				59EEEAB1267A762B009FE798 /* Gradients WatchKit App */,
 				59EEEABC267A762C009FE798 /* Gradients WatchKit Extension */,
