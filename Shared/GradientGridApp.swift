@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct GradientGridApp: App {
-    var body: some Scene {
-        WindowGroup {
-          GradientGrid()
-        }
+  var body: some Scene {
+    WindowGroup {
+      NavigationView {
+        GradientGrid()
+      }
     }
+  }
 }

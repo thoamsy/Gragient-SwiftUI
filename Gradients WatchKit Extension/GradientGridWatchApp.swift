@@ -1,5 +1,5 @@
 //
-//  GradientGridApp.swift
+//  GradientGridWatchApp.swift
 //  Gradients WatchKit Extension
 //
 //  Created by yk on 2021/6/17.
@@ -8,12 +8,10 @@
 import SwiftUI
 
 @main
-struct GradientGridApp: App {
+struct GradientGridWatchApp: App {
     @SceneBuilder var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContentView()
-            }
+          ContentView()
         }
 
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")

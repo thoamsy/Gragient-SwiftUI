@@ -12,13 +12,18 @@ struct GradientCell: View {
   var colorName = "Default Name"
   var radius: CGFloat = 100
 
-  var body: some View {
 
-    VStack {
+  func colorRGB(of color: Color) -> String {
+    let result = color.description
+    let to = result.index(result.endIndex, offsetBy: -2)
+    return String(result.prefix(upTo: to))
+  }
+
+  var body: some View {
+    VStack(spacing: 4) {
       HStack {
         Text(colorName)
           .font(.system(size: 15))
-        Spacer()
       }
       Spacer()
       GradientCircle(
@@ -29,12 +34,21 @@ struct GradientCell: View {
       Spacer()
       HStack {
         HStack {
-          Text(group.startColor.description)
+          Text(colorRGB(of: group.startColor))
           Image(systemName: "arrow.right")
-          Text(group.endColor.description)
+          Text(colorRGB(of: group.endColor))
         }
-        .font(.system(.footnote, design: .rounded))
+        #if os(iOS)
+        .font(
+          .monospaced(.system(.footnote, design: .rounded))()
+        )
+        #elseif os(watchOS)
+        .font(
+          .monospaced(.system(size: 12, weight: .semibold, design: .rounded))()
+        )
+        #endif
         Spacer()
+        #if os(iOS)
         Button(action: {
           UIPasteboard.general.string = "linear-gradient(45deg, \(group.startColor.description), \(group.endColor.description))"
         }) {
@@ -42,11 +56,13 @@ struct GradientCell: View {
             .labelStyle(.iconOnly)
             .foregroundColor(Color(UIColor.label))
         }
+        #endif
       }
     }
-    .padding(16)
-    .frame(width: 320, height: 320)
+    .padding()
+    #if os(iOS)
     .background(Color(UIColor.secondarySystemGroupedBackground))
+    #endif
     .cornerRadius(16)
     .shadow(
       color: Color(red: 36/255, green: 37/255, blue: 38/255, opacity: 0.13),
@@ -83,14 +99,27 @@ extension GradientCell {
 
 struct GradientCell_Previews: PreviewProvider {
   static var previews: some View {
-    GradientCell(
-      group: (
-        Color.rgb(0xff9a93),
-        Color.rgb(0xfad0c4)
+    Group {
+      GradientCell(
+        group: (
+          Color.rgb(0xff9a93),
+          Color.rgb(0xfad0c4)
+        ),
+        radius: 50.0
       )
-    )
-      .preferredColorScheme(.dark)
-      .frame(width: 200)
+        .frame(width: 300, height: 300)
+        .preferredColorScheme(.dark)
+//      GradientCell(
+//        group: (
+//          Color.rgb(0xff9a93),
+//          Color.rgb(0xfad0c4)
+//        ),
+//        radius: 50.0
+//      )
+//        .frame(width: 100, height: 100)
+//        .preferredColorScheme(.dark)
+//        .previewDevice("Apple Watch Series 6 - 44mm")
+    }
   }
 }
 

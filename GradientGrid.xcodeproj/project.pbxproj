@@ -22,13 +22,18 @@
 		59EEEAAE267A762B009FE798 /* Gradients WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 59EEEAAD267A762B009FE798 /* Gradients WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		59EEEAB3267A762C009FE798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EEEAB2267A762C009FE798 /* Assets.xcassets */; };
 		59EEEAB9267A762C009FE798 /* Gradients WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 59EEEAB8267A762C009FE798 /* Gradients WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		59EEEABE267A762C009FE798 /* GradientGridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEABD267A762C009FE798 /* GradientGridApp.swift */; };
+		59EEEABE267A762C009FE798 /* GradientGridWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEABD267A762C009FE798 /* GradientGridWatchApp.swift */; };
 		59EEEAC0267A762C009FE798 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEABF267A762C009FE798 /* ContentView.swift */; };
 		59EEEAC2267A762C009FE798 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEAC1267A762C009FE798 /* NotificationController.swift */; };
 		59EEEAC4267A762C009FE798 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEAC3267A762C009FE798 /* NotificationView.swift */; };
 		59EEEAC6267A762C009FE798 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEAC5267A762C009FE798 /* ComplicationController.swift */; };
 		59EEEAC8267A762D009FE798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EEEAC7267A762D009FE798 /* Assets.xcassets */; };
 		59EEEACB267A762D009FE798 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EEEACA267A762D009FE798 /* Preview Assets.xcassets */; };
+		59EEEADF267B8DFE009FE798 /* GradientData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEAA5267A6944009FE798 /* GradientData.swift */; };
+		59EEEAE0267B8DFE009FE798 /* GradientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEA9C267A5854009FE798 /* GradientCell.swift */; };
+		59EEEAE2267B8DFE009FE798 /* GradientGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEAA2267A5D9F009FE798 /* GradientGrid.swift */; };
+		59EEEAE3267B8DFE009FE798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EEEA81267A5826009FE798 /* Assets.xcassets */; };
+		59EEEAE4267B8DFE009FE798 /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEA9F267A5B73009FE798 /* RGB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +91,7 @@
 		59EEEAAD267A762B009FE798 /* Gradients WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gradients WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59EEEAB2267A762C009FE798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59EEEAB8267A762C009FE798 /* Gradients WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Gradients WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		59EEEABD267A762C009FE798 /* GradientGridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientGridApp.swift; sourceTree = "<group>"; };
+		59EEEABD267A762C009FE798 /* GradientGridWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientGridWatchApp.swift; sourceTree = "<group>"; };
 		59EEEABF267A762C009FE798 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		59EEEAC1267A762C009FE798 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		59EEEAC3267A762C009FE798 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -176,7 +181,7 @@
 		59EEEABC267A762C009FE798 /* Gradients WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				59EEEABD267A762C009FE798 /* GradientGridApp.swift */,
+				59EEEABD267A762C009FE798 /* GradientGridWatchApp.swift */,
 				59EEEABF267A762C009FE798 /* ContentView.swift */,
 				59EEEAC1267A762C009FE798 /* NotificationController.swift */,
 				59EEEAC3267A762C009FE798 /* NotificationView.swift */,
@@ -371,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59EEEACB267A762D009FE798 /* Preview Assets.xcassets in Resources */,
+				59EEEAE3267B8DFE009FE798 /* Assets.xcassets in Resources */,
 				59EEEAC8267A762D009FE798 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,10 +412,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59EEEAE2267B8DFE009FE798 /* GradientGrid.swift in Sources */,
 				59EEEAC2267A762C009FE798 /* NotificationController.swift in Sources */,
+				59EEEADF267B8DFE009FE798 /* GradientData.swift in Sources */,
 				59EEEAC0267A762C009FE798 /* ContentView.swift in Sources */,
 				59EEEAC6267A762C009FE798 /* ComplicationController.swift in Sources */,
-				59EEEABE267A762C009FE798 /* GradientGridApp.swift in Sources */,
+				59EEEAE4267B8DFE009FE798 /* RGB.swift in Sources */,
+				59EEEAE0267B8DFE009FE798 /* GradientCell.swift in Sources */,
+				59EEEABE267A762C009FE798 /* GradientGridWatchApp.swift in Sources */,
 				59EEEAC4267A762C009FE798 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,7 +682,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gradients WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Gradients WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CFBundleExecutable = "Gradients WatchKit Extension";
+				INFOPLIST_KEY_CFBundleName = "Gradients WatchKit Extension";
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -704,7 +717,10 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Gradients WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Gradients WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CFBundleExecutable = "Gradients WatchKit Extension";
+				INFOPLIST_KEY_CFBundleName = "Gradients WatchKit Extension";
+				INFOPLIST_KEY_CFBundleVersion = 1;
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (

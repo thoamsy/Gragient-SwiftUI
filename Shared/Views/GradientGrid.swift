@@ -9,15 +9,9 @@ import SwiftUI
 
 struct GradientGrid: View {
   @StateObject private var colors = Gradients()
+  var radius: CGFloat = 100
 
   typealias GradientColor = (startRGB: Int32, endRGB: Int32)
-
-  //  let colors: [GradientColor] = [
-  //    (0xff9a93, 0xfad0c4),
-  //    (0xa18cd1, 0xfbc2eb),
-  //    (0xfad0c4, 0xffd1ff),
-  //    (0xffecd2, 0xfcb69f)
-  //  ]
 
   func colorString(of color: String) -> Color {
     let index = color.index(after: color.startIndex)
@@ -34,38 +28,37 @@ struct GradientGrid: View {
           colorString(of: color.gradient[0].color),
           colorString(of: color.gradient[1].color)
         ),
-        colorName: color.name
+        colorName: color.name,
+        radius: radius
       )
     }
+    .frame(minWidth: radius * 2, minHeight: radius * 2)
+    .padding()
   }
 
   var body: some View {
-    NavigationView {
-      VStack {
-        #if os(iOS)
-        ScrollView {
-          LazyVStack(spacing: 20) {
-            colorList
-          }
-        }
-        #elseif os(watchOS)
-        List {
+    VStack {
+#if os(iOS)
+      ScrollView {
+        LazyVStack {
           colorList
-        }.listStyle(.carousel)
-      #endif
+        }
       }
-      .navigationTitle("Colors")
-      .task {
-        await colors.updateGradients()
-      }
+#elseif os(watchOS)
+      List {
+        colorList
+      }.listStyle(.carousel)
+#endif
+    }
+    .navigationBarTitle("Colors")
+    .task {
+      await colors.updateGradients()
     }
   }
 }
 
 struct GradientGrid_Previews: PreviewProvider {
   static var previews: some View {
-    Group {
-      GradientGrid()
-    }
+    GradientGrid(radius: 50)
   }
 }
