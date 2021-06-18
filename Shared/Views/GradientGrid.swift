@@ -23,14 +23,24 @@ struct GradientGrid: View {
 
   var colorList: some View {
     ForEach(colors.items) { color in
-      GradientCell(
-        group: (
-          colorString(of: color.gradient[0].color),
-          colorString(of: color.gradient[1].color)
-        ),
-        colorName: color.name,
-        radius: radius
-      )
+      let startColor = colorString(of: color.gradient[0].color)
+      let endColor = colorString(of: color.gradient[1].color)
+      NavigationLink {
+        PureColor(
+          startColor: startColor,
+          endColor: endColor
+        )
+          .navigationTitle(color.name)
+      } label: {
+        GradientCell(
+          group: (
+            startColor,
+            endColor
+          ),
+          colorName: color.name,
+          radius: radius
+        )
+      }
     }
     .frame(minWidth: radius * 2, minHeight: radius * 2)
     .padding()

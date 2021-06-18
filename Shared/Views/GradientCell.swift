@@ -38,17 +38,17 @@ struct GradientCell: View {
           Image(systemName: "arrow.right")
           Text(colorRGB(of: group.endColor))
         }
-        #if os(iOS)
+#if os(iOS)
         .font(
           .monospaced(.system(.footnote, design: .rounded))()
         )
-        #elseif os(watchOS)
+#elseif os(watchOS)
         .font(
           .monospaced(.system(size: 12, weight: .semibold, design: .rounded))()
         )
-        #endif
+#endif
         Spacer()
-        #if os(iOS)
+#if os(iOS)
         Button(action: {
           UIPasteboard.general.string = "linear-gradient(45deg, \(group.startColor.description), \(group.endColor.description))"
         }) {
@@ -56,13 +56,13 @@ struct GradientCell: View {
             .labelStyle(.iconOnly)
             .foregroundColor(Color(UIColor.label))
         }
-        #endif
+#endif
       }
     }
     .padding()
-    #if os(iOS)
+#if os(iOS)
     .background(Color(UIColor.secondarySystemGroupedBackground))
-    #endif
+#endif
     .cornerRadius(16)
     .shadow(
       color: Color(red: 36/255, green: 37/255, blue: 38/255, opacity: 0.13),
@@ -100,25 +100,27 @@ extension GradientCell {
 struct GradientCell_Previews: PreviewProvider {
   static var previews: some View {
     Group {
-      GradientCell(
-        group: (
-          Color.rgb(0xff9a93),
-          Color.rgb(0xfad0c4)
-        ),
-        radius: 50.0
-      )
-        .frame(width: 300, height: 300)
-        .preferredColorScheme(.dark)
-//      GradientCell(
-//        group: (
-//          Color.rgb(0xff9a93),
-//          Color.rgb(0xfad0c4)
-//        ),
-//        radius: 50.0
-//      )
-//        .frame(width: 100, height: 100)
-//        .preferredColorScheme(.dark)
-//        .previewDevice("Apple Watch Series 6 - 44mm")
+      ZStack {
+        GradientCell(
+          group: (
+            Color.rgb(0xff9a93),
+            Color.rgb(0xfad0c4)
+          ),
+          radius: 50.0
+        )
+          .frame(width: 300, height: 300)
+          .preferredColorScheme(.dark)
+      }
+      //      GradientCell(
+      //        group: (
+      //          Color.rgb(0xff9a93),
+      //          Color.rgb(0xfad0c4)
+      //        ),
+      //        radius: 50.0
+      //      )
+      //        .frame(width: 100, height: 100)
+      //        .preferredColorScheme(.dark)
+      //        .previewDevice("Apple Watch Series 6 - 44mm")
     }
   }
 }

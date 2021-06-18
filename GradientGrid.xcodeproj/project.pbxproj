@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59E3BB1C267C79BF000B7477 /* PureColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3BB1B267C79BF000B7477 /* PureColor.swift */; };
+		59E3BB1D267C79BF000B7477 /* PureColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3BB1B267C79BF000B7477 /* PureColor.swift */; };
+		59E3BB1E267C79BF000B7477 /* PureColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3BB1B267C79BF000B7477 /* PureColor.swift */; };
 		59EEEA8D267A5826009FE798 /* GradientGridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEA7F267A5825009FE798 /* GradientGridApp.swift */; };
 		59EEEA8E267A5826009FE798 /* GradientGridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EEEA7F267A5825009FE798 /* GradientGridApp.swift */; };
 		59EEEA91267A5826009FE798 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59EEEA81267A5826009FE798 /* Assets.xcassets */; };
@@ -79,6 +82,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		59E3BB1B267C79BF000B7477 /* PureColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PureColor.swift; sourceTree = "<group>"; };
 		59EEEA7F267A5825009FE798 /* GradientGridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientGridApp.swift; sourceTree = "<group>"; };
 		59EEEA81267A5826009FE798 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59EEEA86267A5826009FE798 /* GradientGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradientGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +170,7 @@
 			children = (
 				59EEEA9C267A5854009FE798 /* GradientCell.swift */,
 				59EEEAA2267A5D9F009FE798 /* GradientGrid.swift */,
+				59E3BB1B267C79BF000B7477 /* PureColor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				59EEEA9D267A5854009FE798 /* GradientCell.swift in Sources */,
 				59EEEA8D267A5826009FE798 /* GradientGridApp.swift in Sources */,
 				59EEEAA0267A5B73009FE798 /* RGB.swift in Sources */,
+				59E3BB1C267C79BF000B7477 /* PureColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +411,7 @@
 				59EEEA9E267A5854009FE798 /* GradientCell.swift in Sources */,
 				59EEEA8E267A5826009FE798 /* GradientGridApp.swift in Sources */,
 				59EEEAA1267A5B73009FE798 /* RGB.swift in Sources */,
+				59E3BB1D267C79BF000B7477 /* PureColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +424,7 @@
 				59EEEADF267B8DFE009FE798 /* GradientData.swift in Sources */,
 				59EEEAC0267A762C009FE798 /* ContentView.swift in Sources */,
 				59EEEAC6267A762C009FE798 /* ComplicationController.swift in Sources */,
+				59E3BB1E267C79BF000B7477 /* PureColor.swift in Sources */,
 				59EEEAE4267B8DFE009FE798 /* RGB.swift in Sources */,
 				59EEEAE0267B8DFE009FE798 /* GradientCell.swift in Sources */,
 				59EEEABE267A762C009FE798 /* GradientGridWatchApp.swift in Sources */,
