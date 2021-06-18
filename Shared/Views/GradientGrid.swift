@@ -29,7 +29,7 @@ struct GradientGrid: View {
   }
 
   var colorList: some View {
-    ForEach(searched) { color in
+    ForEach(colors.isFetching ? colors.placeholder : searched) { color in
       let startColor = colorString(of: color.gradient[0].color)
       let endColor = colorString(of: color.gradient[1].color)
       NavigationLink {
@@ -47,6 +47,7 @@ struct GradientGrid: View {
           colorName: color.name,
           radius: radius
         )
+          .redacted(reason: colors.isFetching ? .placeholder : [])
       }
     }
     .frame(minWidth: radius * 2, minHeight: radius * 2)

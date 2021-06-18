@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GradientCell: View {
   let group: (startColor: Color, endColor: Color)
-  var colorName = "Default Name"
+  var colorName = "Unname Color"
   var radius: CGFloat = 100
 
   var body: some View {
@@ -98,6 +98,17 @@ extension GradientCell {
 struct GradientCell_Previews: PreviewProvider {
   static var previews: some View {
     Group {
+      ZStack {
+        GradientCell(
+          group: (
+            Color.rgb(0xff9a93),
+            Color.rgb(0xfad0c4)
+          ),
+          radius: 50.0
+        )
+          .frame(width: 300, height: 300)
+          .preferredColorScheme(.dark)
+      }
       ZStack {
         GradientCell(
           group: (
