@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591B5C61268C41D5000917DC /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591B5C60268C41D5000917DC /* TestView.swift */; };
+		591B5C62268C41D5000917DC /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591B5C60268C41D5000917DC /* TestView.swift */; };
+		591B5C63268C41D5000917DC /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591B5C60268C41D5000917DC /* TestView.swift */; };
 		59E3BB1C267C79BF000B7477 /* PureColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3BB1B267C79BF000B7477 /* PureColor.swift */; };
 		59E3BB1D267C79BF000B7477 /* PureColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3BB1B267C79BF000B7477 /* PureColor.swift */; };
 		59E3BB1E267C79BF000B7477 /* PureColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E3BB1B267C79BF000B7477 /* PureColor.swift */; };
@@ -82,6 +85,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		591B5C60268C41D5000917DC /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		59E3BB1B267C79BF000B7477 /* PureColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PureColor.swift; sourceTree = "<group>"; };
 		59E3BB1F267C8CD6000B7477 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		59EEEA7F267A5825009FE798 /* GradientGridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientGridApp.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				59EEEA9C267A5854009FE798 /* GradientCell.swift */,
 				59EEEAA2267A5D9F009FE798 /* GradientGrid.swift */,
 				59E3BB1B267C79BF000B7477 /* PureColor.swift */,
+				591B5C60268C41D5000917DC /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591B5C61268C41D5000917DC /* TestView.swift in Sources */,
 				59EEEAA3267A5D9F009FE798 /* GradientGrid.swift in Sources */,
 				59EEEAA6267A6944009FE798 /* GradientData.swift in Sources */,
 				59EEEA9D267A5854009FE798 /* GradientCell.swift in Sources */,
@@ -408,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591B5C62268C41D5000917DC /* TestView.swift in Sources */,
 				59EEEAA4267A5D9F009FE798 /* GradientGrid.swift in Sources */,
 				59EEEAA7267A6944009FE798 /* GradientData.swift in Sources */,
 				59EEEA9E267A5854009FE798 /* GradientCell.swift in Sources */,
@@ -423,6 +430,7 @@
 			files = (
 				59EEEAE2267B8DFE009FE798 /* GradientGrid.swift in Sources */,
 				59EEEAC2267A762C009FE798 /* NotificationController.swift in Sources */,
+				591B5C63268C41D5000917DC /* TestView.swift in Sources */,
 				59EEEADF267B8DFE009FE798 /* GradientData.swift in Sources */,
 				59EEEAC0267A762C009FE798 /* ContentView.swift in Sources */,
 				59EEEAC6267A762C009FE798 /* ComplicationController.swift in Sources */,

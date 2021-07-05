@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "Apple Watch Notification center (38mm).png",
       "idiom" : "watch",
       "role" : "notificationCenter",
       "scale" : "2x",
@@ -8,6 +9,7 @@
       "subtype" : "38mm"
     },
     {
+      "filename" : "Apple Watch Notification center (42mm).png",
       "idiom" : "watch",
       "role" : "notificationCenter",
       "scale" : "2x",
@@ -15,18 +17,21 @@
       "subtype" : "42mm"
     },
     {
+      "filename" : "Apple Watch Companion Settings@2x.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
+      "filename" : "Apple Watch Companion Settings@3x.png",
       "idiom" : "watch",
       "role" : "companionSettings",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
+      "filename" : "Apple Watch Home Screen (38mm).png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -34,6 +39,7 @@
       "subtype" : "38mm"
     },
     {
+      "filename" : "Apple Watch Home Screen (40mm).png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",
@@ -41,6 +47,7 @@
       "subtype" : "40mm"
     },
     {
+      "filename" : "Apple Watch Home Screen (44mm).png",
       "idiom" : "watch",
       "role" : "appLauncher",
       "scale" : "2x",

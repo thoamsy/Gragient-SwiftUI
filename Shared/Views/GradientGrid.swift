@@ -72,7 +72,7 @@ struct GradientGrid: View {
     .task {
       await colors.updateGradients()
     }
-    .searchable("Searching Colors", text: $keyword) {
+    .searchable(text: $keyword, prompt: "Searching Colors") {
       ForEach(searched.prefix(10)) { color in
         let startColor = colorString(of: color.gradient[0].color)
         let endColor = colorString(of: color.gradient[1].color)
